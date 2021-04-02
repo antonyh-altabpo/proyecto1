@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="product_template_form_altabpo_inherit" model="ir.ui.view">
+            <field name="name">product.template.form.altabpo.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='options']" position="inside">
+                    <div class="">
+                        <field name="cost_fob" />
+                        <label for="cost_fob"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_template_form_view_inherit_altabpo_stock" model="ir.ui.view">
+            <field name="name">product.template_procurement.altabpo</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="stock.product_template_form_view_procurement_button"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='responsible_id']" position="after">
+                    <field name="kg_box" />
+                    <field name="box_pal" />
+                    <field name="mt2_cja" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
